@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Words">
         <activity
             android:name=".DisplayMessageActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
