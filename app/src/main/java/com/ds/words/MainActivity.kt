@@ -15,14 +15,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+    //chamado para quando o usuário apertar o enviar
+    fun sendMessage(view: View) {
+        val editText = findViewById<EditText>(R.id.editTextTextPersonName)
+        val message = editText.text.toString()
+        val intent = Intent(this, DisplayMessageActivity::class.java).apply {
+            putExtra(EXTRA_MESSAGE, message)
+        }
+        startActivity(intent)
 }
 
-//chamado para quando o usuário apertar o enviar
-fun sendMessage(view: View) {
-    val editText = findViewById<EditText>(R.id.editTextTextPersonName)
-    val message = editText.text.toString()
-    val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-        putExtra(EXTRA_MESSAGE, message)
-    }
-    startActivity(intent)
+
+
 }
